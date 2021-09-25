@@ -1,0 +1,67 @@
+#include <stdio.h>
+int main()
+{
+int j,re;
+long int n;
+char str[100],ch;
+int a[100]; 
+float conversion;
+int i=0;
+char hexa[8];
+char hex[16]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'}; 
+int s,c,d1, d2, d3, d4, d5, o,d,e;
+while (e<2){
+ printf ("conversion de sistemas numericos\n");
+ printf("indica tu valor en sistema decimal\n");
+ scanf("%d",&s);
+ printf("indica la operación que quiere realizar\n 1) binario\n 2) octal\n 3)hexadecimal\n");
+    scanf("%d",&c);
+
+     conversion=0;
+    switch(c)
+{
+
+case 1:
+  while(s)
+ {
+  a[i]=s%2;
+  s=s/2;
+  i++;
+ }
+ printf ("la conversion en sistema binario es: ");
+ for(i--;i>=0;i--)
+ printf("%d",a[i]);
+break;
+case 2:
+	d5 = s % 8;
+s /= 8;
+d4 = s % 8;
+s /= 8;
+d3 = s % 8;
+s /= 8;
+d2 = s % 8;
+s /= 8;
+d1 = n % 8;
+
+o = 10000 * d1 + 1000 * d2 + 100 * d3 + 10 * d4 + d5;
+
+printf("la conversion en sistema octal es: %d\n", o);
+break;  
+case 3:
+		while(s>=16){
+		hexa[i]=hex[s%16];
+		s=s/16;
+		i++;
+	}
+	hexa[i]=hex[s];
+	printf("La conversión en sistema hexadecimal es: ");
+	int j=0;
+	for(j=i;j>=0;j--)
+		printf("%c\n",hexa[j]);
+		break; 
+ }
+     printf ("\ndeseas hacer el calculo de nuevo 1)si 2)no \n");
+ 	scanf("%d", &e); 
+}
+      printf ("Gracias por su preferencia");
+}
